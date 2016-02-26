@@ -1,0 +1,149 @@
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="imageslider.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+var pics=["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg"];
+var currcounter=1;
+var currcounter2=1;
+var picdesc=["Sea","Lake","Flowers","Sky","Skytree"];
+$('.desc').hide();
+$('#centerimage').after('<span class="desc">' + picdesc[0] + '</span>');
+$( "#ltarget" ).click(function() {
+	$("#centerimage").fadeOut(function() { 
+	$('.desc').hide();
+	if(currcounter>4){
+		currcounter=0;
+	}
+	currimage=pics[currcounter];
+	$('#centerimage').after('<span class="desc">' + picdesc[currcounter] + '</span>');
+	currcounter++;
+  $(this).load(function() { $(this).fadeIn(); }); 
+  $(this).attr("src", currimage);
+    
+   
+}); 
+});
+
+$( "#rtarget" ).click(function() {
+$('.desc').hide();
+$("#centerimage").fadeOut(function() {
+$('.desc').hide();
+if(currcounter2>4){
+		currcounter2=0;
+	}
+	currimage=pics[currcounter2];
+	$('#centerimage').after('<span class="desc">' + picdesc[currcounter2] + '</span>');
+	currcounter2++;
+	
+$(this).load(function() { $(this).fadeIn(); }); 
+$(this).attr("src", currimage);
+
+  });
+});
+
+$( "#one" ).click(function() {
+$('.desc').hide();
+$("#centerimage").fadeOut(function() {
+	$('.desc').hide();
+$(this).load(function() { $(this).fadeIn(); }); 
+$('#centerimage').after('<span class="desc">' + picdesc[0] + '</span>');
+$(this).attr("src",pics[0]);
+
+  });
+});
+
+$( "#two" ).click(function() {
+$('.desc').hide();
+$("#centerimage").fadeOut(function() {
+	$('.desc').hide();
+$(this).load(function() { $(this).fadeIn(); }); 
+$('#centerimage').after('<span class="desc">' + picdesc[1] + '</span>');
+$(this).attr("src",pics[1]);
+
+  });
+});
+$( "#three" ).click(function() {
+$('.desc').hide();
+$("#centerimage").fadeOut(function() {
+	$('.desc').hide();
+$(this).load(function() { $(this).fadeIn(); }); 
+$('#centerimage').after('<span class="desc">' + picdesc[2] + '</span>');
+$(this).attr("src",pics[2]);
+
+  });
+});
+$( "#four" ).click(function() {
+$('.desc').hide();
+$("#centerimage").fadeOut(function() {
+	$('.desc').hide();
+$(this).load(function() { $(this).fadeIn(); }); 
+$('#centerimage').after('<span class="desc">' + picdesc[3] + '</span>');
+$(this).attr("src",pics[3]);
+
+  });
+});
+
+$( "#five" ).click(function() {
+$('.desc').hide();
+$("#centerimage").fadeOut(function() {
+	$('.desc').hide();
+$(this).load(function() { $(this).fadeIn(); }); 
+$('#centerimage').after('<span class="desc">' + picdesc[4] + '</span>');
+$(this).attr("src",pics[4]);
+
+  });
+});
+
+
+});
+
+
+</script>
+		
+</head>
+
+<body>
+<!-- This page is for building an image slider -->
+<!-- As a first step, the goal is to build a simple application in -->
+
+<div id="main" id="main">
+
+<div id="ltarget" id="larrow">
+<img id="limage"src="larrow.jpg">	 
+</div>
+<div id="centertarget" id="centerimage">
+<img id="centerimage" src="1.jpg">
+</div>
+
+
+<div id="one" >
+1
+</div>
+
+<div id="two" >
+2
+</div>
+<div id="three" >
+3
+</div>
+
+<div id="four" >
+4
+</div>
+
+<div id="five" >
+5
+</div>
+
+<div id="rtarget" id="rarrow">
+<img id="rimage"src="rarrow.jpg" >
+</div>
+</div>
+</body>
+</html>
